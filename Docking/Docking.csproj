@@ -3,23 +3,12 @@
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
 		<TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
-		<SpaRoot>ClientApp\</SpaRoot>
+		<SpaRoot>..\Web\</SpaRoot>
 	</PropertyGroup>
 
 	<PropertyGroup>
 		<TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
-	</PropertyGroup>
-	
-	<ItemGroup>
-		<Content Remove="$(SpaRoot)**" />
-		<None Remove="$(SpaRoot)**" />
-		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
-	</ItemGroup>
-	
-	<ItemGroup>
-	  <None Remove="ClientApp\src\app\data.service.ts" />
-	  <None Remove="ClientApp\src\app\product.ts" />
-	</ItemGroup>
+	</PropertyGroup>	
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
@@ -27,16 +16,18 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\Data.EF\Data.EF.csproj" />
 	  <ProjectReference Include="..\Data\Data.csproj" />
+	  <ProjectReference Include="..\Server\Server.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <TypeScriptCompile Include="ClientApp\src\app\data.service.ts" />
-	  <TypeScriptCompile Include="ClientApp\src\app\product.ts" />
+	  <TypeScriptCompile Include="..\Data.Web\app\data.service.ts" />
+	  <TypeScriptCompile Include="..\Data.Web\app\product.ts" />
 	</ItemGroup>
 
 	<Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
@@ -53,3 +44,38 @@
 		</ItemGroup>
 	</Target>
 </Project>
+
+<!--====================================
+	Убирает мусор из проекта Docking
+
+	<ItemGroup>
+		<Content Remove="$(SpaRoot)**" />
+		<Content Remove="ClientApp\**" />
+		<None Remove="$(SpaRoot)**" />
+		<None Remove="ClientApp\**" />		
+	</ItemGroup>	
+	
+	<ItemGroup>
+	  <Compile Remove="ClientApp\**" />
+	  <EmbeddedResource Remove="ClientApp\**" />
+	  <None Remove="..\Web\bin\Debug\netcoreapp3.1\**" />
+	  <None Remove="..\Web\obj\**" />
+	  <None Remove="..\Data.Web\**" />
+	  <None Remove="..\Web\src\**" />
+	  <TypeScriptCompile Remove="ClientApp\**" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Content Remove="tsconfig.json" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Remove="..\Web\angular.json" />
+	  <None Remove="..\Web\app.module.ts" />
+	  <None Remove="..\Web\main.ts" />
+	  <None Remove="..\Web\package.json" />
+	  <None Remove="..\Web\polyfills.ts" />
+	  <None Remove="..\Web\tsconfig.json" />
+	  <None Remove="..\Web\Web.csproj" />
+	</ItemGroup>-->
+	

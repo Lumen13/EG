@@ -19,7 +19,7 @@ namespace Docking
 
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "ClientApp/dist";
+                configuration.RootPath = "../Web/dist";
             });
         }
 
@@ -44,7 +44,7 @@ namespace Docking
 
             app.UseSpa(spa =>
             {
-                spa.Options.SourcePath = "ClientApp";
+                spa.Options.SourcePath = "../Web";
 
                 if (env.IsDevelopment())
                 {
