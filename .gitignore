@@ -69,3 +69,4 @@ obj/
 Docking/bin/
 Docking/obj/
 Docking/ClientApp/node_modules/
+Docking/ClientApp/dist/
