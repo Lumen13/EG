@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+
+# EG
+.vs/
+bin/
+obj/
+Docking/bin/
+Docking/obj/
+Docking/ClientApp/node_modules/
