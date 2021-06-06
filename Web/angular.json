@@ -12,7 +12,7 @@
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": "polyfills.ts",
             "tsConfig": "tsconfig.json",
             "aot": true
           },

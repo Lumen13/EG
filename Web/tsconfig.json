@@ -19,7 +19,7 @@
   },
   "files": [        //'.ts' already included into the name
     "main",
-    "src/polyfills"
+    "polyfills"
   ],
   "include": [
     "src/**/*.d.ts"

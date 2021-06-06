@@ -17,6 +17,19 @@
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+	</ItemGroup>	
+
+	<ItemGroup>
+	  <None Remove="..\Web\src\**" />
+	</ItemGroup>	
+
+	<ItemGroup>
+	  <None Remove="..\Web\angular.json" />
+	  <None Remove="..\Web\app.module.ts" />
+	  <None Remove="..\Web\main.ts" />
+	  <None Remove="..\Web\package.json" />
+	  <None Remove="..\Web\polyfills.ts" />
+	  <None Remove="..\Web\tsconfig.json" />
 	</ItemGroup>
 
 	<ItemGroup>
